@@ -4,14 +4,15 @@ OPEN          := $(if ($(OS), Linux),xdg-open,open)
 
 NAME          := s21_decimal.a
 
-CC            := gcc
-CFLAGS        := -Wall -Wextra -Werror -std=c11
-
-VALGRIND      := valgrind --tool=memcheck --trace-children=yes --track-origins=yes --leak-check=full
-
+INC_DIR       := includes
 SRC_DIR       := src
 SRCS          := src/s21_decimal.c
 OBJS          := $(SRCS:.c=.o)
+
+CC            := gcc
+CFLAGS        := -Wall -Wextra -Werror -std=c11 -I $(INC_DIR)
+
+VALGRIND      := valgrind --tool=memcheck --trace-children=yes --track-origins=yes --leak-check=full
 
 GCOV          := --coverage
 LCOV          := lcov --no-external -c
