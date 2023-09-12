@@ -1,5 +1,5 @@
 # CDecimal
-Simple decimal floating point number lib implementation.
+Simple decimal floating point number lib implementation. 
 
 ## Information
 
